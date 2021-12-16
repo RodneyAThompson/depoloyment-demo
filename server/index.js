@@ -13,8 +13,10 @@ const app = express()
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../index.html'))
+    rollbar.info('html fiel served successfulyy')
 })
 
+app.use(rollbar.errorHandler())
 const port = process.env.PORT || 4005 
 
 app.listen(port, () => {console.log(`Avengers assemble... on port ${port}.`)})
