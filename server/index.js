@@ -19,7 +19,7 @@ app.get('/', function(req, res) {
 })
 
 app.get('/css', function(req, res) {
-    res.sendFile(path.join(__dirname, '../style.css'))
+    res.sendFile(path.join(__dirname, '../styles.css'))
     rollbar.info('html field served successfully')
 })
 
