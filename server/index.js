@@ -11,13 +11,15 @@ const rollbar = new Rollbar({
 
 const app = express()
 
-app.get('/css', function(req, res) {
-    res.sendFile(path.join(__dirname, '../style.css'))
-    rollbar.info('html field served successfully')
-})
+
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../index.html'))
+    rollbar.info('html field served successfully')
+})
+
+app.get('/css', function(req, res) {
+    res.sendFile(path.join(__dirname, '../style.css'))
     rollbar.info('html field served successfully')
 })
 
