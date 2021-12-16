@@ -13,7 +13,7 @@ const app = express()
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../index.html'))
-    rollbar.info('html fiel served successfulyy')
+    rollbar.info('html field served successfully')
 })
 
 app.use(rollbar.errorHandler())
